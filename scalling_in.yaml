@@ -52,7 +52,7 @@ topology_template:
                 condition:
                     threshold: 10
                     constraint: utilization less_than 10%
-                    period: 600
+                    period: 300
                     evaluations: 1
                     method: mean
                     resource_type: instance
