@@ -44,6 +44,10 @@ topology_template:
           max_instances: 3
           default_instances: 1
 
+    - vdu_cpu_usage_monitoring_policy:
+        type: tosca.policies.tacker.Alarming
+        triggers:
+            
             vdu_lcpu_usage_scaling_in:
                 event_type:
                     type: tosca.events.resource.utilization
@@ -52,10 +56,10 @@ topology_template:
                 condition:
                     threshold: 10
                     constraint: utilization less_than 10%
-                    period: 300
+                    period: 60
                     evaluations: 1
                     method: mean
                     resource_type: instance
                     comparison_operator: lt
                 metadata: SG1
-                action: [SP1]
+            action: [SP1]
